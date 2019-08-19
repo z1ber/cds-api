@@ -16,14 +16,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
--- Privileges for `cdsadmin`@`localhost`
--- Privileges for `cdsadmin`@`%`
-
-GRANT USAGE ON *.* TO 'cdsadmin'@'localhost';
-GRANT ALL PRIVILEGES ON `cdsadmin\_%`.* TO 'cdsadmin'@'localhost';
-GRANT USAGE ON *.* TO 'cdsadmin'@'%';
-GRANT ALL PRIVILEGES ON `cdsadmin\_%`.* TO 'cdsadmin'@'%';
-
 --
 -- Database: `horario_cds`
 --

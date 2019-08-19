@@ -5,8 +5,8 @@ var mysql = require('mysql');
 //local mysql db connection
 var connection = mysql.createConnection({
     host     : 'localhost',
-    user     : 'root',
-    password : 'mysql123API',
+    user     : 'b3642c0a7d88bb',
+    password : 'ba157c25',
     database : 'horario_cds'
 });
 
