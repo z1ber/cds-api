@@ -42,7 +42,7 @@ Usuario.seleccionarUsuario = function createUser(username, result) {
 };
 
 Usuario.comprobarUsuario = function createUser(usuario, result) {
-        sql.query("Select * from usuario where nombreLogin = ? AND password = ? AND idRol = ? ", [usuario.nombreLogin, usuario.password, usuario.idRol], function (err, res) {
+        sql.query("Select * from usuario where nombreLogin = ? AND password = ?", [usuario.nombreLogin, usuario.password], function (err, res) {
                 if(err) {
                     console.log("error: ", err);
                     result(err, null);
