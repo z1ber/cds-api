@@ -22,8 +22,15 @@ Usuario.insertarUsuario= function createUser(newUsuario, result) {
                     result(err, null);
                 }
                 else{
-                    console.log("Nuevo usuario ingresado");
-                    result(null, newUsuario);
+                    sql.query("SELECT * FROM usuario WHERE idUsuario = ?", res.insertId, function(error,response){
+                        if(err){
+                            console.log("error: ",error);
+                            result(error,null);
+                        }else{
+                            result(null, response);
+                        }       
+                    })
+                    
                 }
             });
 };
