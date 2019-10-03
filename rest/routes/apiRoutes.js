@@ -103,6 +103,9 @@ module.exports = function(app) {
   app.route('/api/usuario')
     .get(usuario.mostrarUsuarios)
     .post(usuario.nuevoUsuario);
+  
+  app.route('/api/usuarios/:idRol')
+    .get(usuario.usuariosRol);
 
   app.route('/api/login')
     .post(usuario.loginUsuario);

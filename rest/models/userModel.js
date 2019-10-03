@@ -75,6 +75,20 @@ Usuario.seleccionarTodos = function getAllUser(result) {
             });
 };
 
+Usuario.seleccionarTodosRol= function getAllUsers(idRol, result) {
+    sql.query("Select * from usuario where idRol = ?",idRol, function (err, res) {
+
+            if(err) {
+                console.log("error: ", err);
+                result(err, null);
+            }
+            else{
+                console.log('usuarios : ', res);
+                result(null, res);
+            }
+        });
+};
+
 Usuario.actualizarUsuario = function(idUsuario, usuario, result){
   sql.query("UPDATE usuario SET nombreUsuario = ?, apellidoUsuario = ?, dui = ?, direccion = ?, telefono = ?, idRol = ? WHERE idUsuario = ?",
   [usuario.nombreUsuario, usuario.apellidoUsuario, usuario.dui, usuario.direccion, usuario.telefono, usuario.idRol, idUsuario], function (err, res) {

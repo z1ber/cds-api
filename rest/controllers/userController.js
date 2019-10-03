@@ -12,6 +12,19 @@ exports.mostrarUsuarios = function(req, res) {
   });
 };
 
+exports.usuariosRol = function(req, res) {
+  Usuario.seleccionarTodosRol(req.params.idRol, function(err, user) {
+    if (err){
+      return res.status(400).send({error:400, message: err.code});
+    }
+    if (user.length < 1){
+      return res.status(404).send({error:404, message: 'No hay usuarios con este rol'});
+    } else{
+      return res.json(user);
+    }
+  });
+};
+
 exports.nuevoUsuario = function(req, res) {
   var nuevo_usuario = new Usuario(req.body);
 
